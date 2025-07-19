@@ -5,12 +5,12 @@ import { toast } from "react-toastify";
 import { axiosInstance } from "../auth/AxiosConfig.jsx";
 
 const Login = () => {
-  const [userName, setUserName] = useState("");
+  const [userName, setuserName] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axiosInstance.post("/api/users/login", {
+      const response = await axiosInstance.post("/user/login", {
         userName,
         password,
       });
@@ -132,7 +132,7 @@ const Login = () => {
                     <Form.Control
                       type="text"
                       value={userName}
-                      onChange={(e) => setUserName(e.target.value)}
+                      onChange={(e) => setuserName(e.target.value)}
                       className="bg-transparent text-white border-white"
                       style={{ borderWidth: 2 }}
                     />
